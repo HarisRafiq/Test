@@ -21,7 +21,7 @@ class Key {
       if(obj&&obj.partitionKey)
         this.key=obj.partitionKey;
       else if(obj&&!obj.partitionKey)
-        this.key=createHash(JSON.stringify(obj));
+        this.key=this.createHash(JSON.stringify(obj));
     }
 
     nullCheck(){
@@ -34,7 +34,7 @@ class Key {
     }
     lengthCheck(){
       if (this.key.length > MAX_PARTITION_KEY_LENGTH)
-        this.key=createHash(this.key);
+        this.key=this.createHash(this.key);
     }
     createHash(str){
       return crypto.createHash("sha3-512").update(str).digest("hex");
