@@ -13,8 +13,5 @@ describe("deterministicPartitionKey", () => {
     const trivialKey = deterministicPartitionKey({partitionKey:1234});
     expect(typeof trivialKey).toBe("string")
   });
-  it("Returns the literal 'string' when given type number as partitionKey", () => {
-    const trivialKey = deterministicPartitionKey({partitionKey:1234});
-    expect(typeof trivialKey).toBe("string")
-  });
+ 
 });
